@@ -1,23 +1,12 @@
-import Image from 'next/image'
+import HomeContainer from '@/app/components/HomeContainer'
 
 export default async function Home () {
-  let renderProducts = <li>no products</li>
+  let productsArr = []
   try {
     const res = await fetch('https://burgerhub00.github.io/data/products.json')
     const data = await res.json()
     const { products } = data
-    renderProducts = products.map((product: any) => (
-      <li key={product.id}>
-        <Image
-          src={product.image}
-          width='200'
-          height='200'
-          alt={product.name}
-        />
-        <h2>{product.name}</h2>
-        <p>{product.price}</p>
-      </li>
-    ))
+    productsArr = products
   } catch (error) {
     console.log(error)
   }
@@ -25,7 +14,7 @@ export default async function Home () {
   return (
     <div>
       <h1>Burger Order</h1>
-      <ul>{renderProducts}</ul>
+      <HomeContainer products={productsArr} />
     </div>
   )
 }
