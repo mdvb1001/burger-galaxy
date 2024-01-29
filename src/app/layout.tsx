@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ProductsProvider } from '@/app/Contexts/ProductsContext'
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,6 +20,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ProductsProvider>
+          <nav>
+            <Link href="/">Burger Cove</Link>
+            <Link className="pl-1" href="/cart">Cart</Link>
+          </nav>
           {children}
         </ProductsProvider>
       </body>

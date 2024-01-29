@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { formatCentsToDollar } from "@/app/utils";
+import BackButton from "@/app/components/BackButton";
 interface ProductDetailsPageProps {
   params: { id: string };
 }
@@ -28,6 +29,7 @@ const ProductDetail = async (props: ProductDetailsPageProps) => {
 
   return (
     <div key={prod.id}>
+      <BackButton />
       <h1>{prod.name}</h1>
       <Image src={prod.image} width="200" height="200" alt={prod.name} />
       <div>Price: ${formatCentsToDollar(prod.price)}</div>
