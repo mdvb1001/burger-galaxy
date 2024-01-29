@@ -2,9 +2,10 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
+import { formatCentsToDollar } from "@/app/utils";
 
 interface HomeContainerProps {
-  products: [Product]
+  data: [Product]
 }
 
 interface Product {
@@ -16,10 +17,10 @@ interface Product {
     calorie: number
 }
 
-const HomeContainer = ({ products }: HomeContainerProps) => {
+const HomeContainer = ({ data }: HomeContainerProps) => {
   return (
     <ul>
-      {products.map((product: any) => (
+      {data.map((product: any) => (
         <li key={product.id}>
           <Link href={`/products/${product.id}`}>
             <Image
@@ -29,7 +30,7 @@ const HomeContainer = ({ products }: HomeContainerProps) => {
               alt={product.name}
             />
             <h2>{product.name}</h2>
-            <p>{product.price}</p>
+            <p>${formatCentsToDollar(product.price)}</p>
             <p>{product.description}</p>
           </Link>
         </li>

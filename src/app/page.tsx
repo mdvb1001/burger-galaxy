@@ -12,9 +12,9 @@ export default async function Home () {
   }
 
   return (
-    <div>
-      <h1>Burger Order</h1>
-      <HomeContainer products={productsArr} />
-    </div>
+      <div>
+        <h1>Burger Order</h1>
+        <HomeContainer data={productsArr} />
+      </div>
   )
 }
