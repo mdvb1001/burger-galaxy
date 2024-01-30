@@ -1,10 +1,10 @@
 'use client'
 
 import React from 'react';
-import { useCartItems } from '@/app/Contexts/CartContext';
+import { useCartContext } from '@/app/Contexts/CartContext';
 
 const Cart = () => {
-    const { totalQuantityInCart } = useCartItems();
+    const { totalQuantityInCart } = useCartContext();
 
     return (
         <div>

@@ -9,9 +9,10 @@ interface Item {
 
 interface CartContextProps {
   cartItems: Item[];
-  addToCart: (id: string) => void;
-  removeFromCart: (id: string) => void;
+  addOneToCart: (id: string) => void;
+  removeOneFromCart: (id: string) => void;
   totalQuantityInCart: number;
+  removeFromCartCompletely: (id: string) => void;
 }
 
 const CartContext = createContext<CartContextProps | undefined>(undefined);
@@ -21,7 +22,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
 }) => {
   const [cartItems, setCartItems] = useState<Item[]>([]);
 
-  const addToCart = useCallback((id: string) => {
+  const addOneToCart = useCallback((id: string) => {
     setCartItems((prevItems) => {
       const existingItem = prevItems.find((item) => item.id === id);
       if (existingItem) {
@@ -38,7 +39,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
 
   const totalQuantityInCart = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
-  const removeFromCart = useCallback((id: string) => {
+  const removeOneFromCart = useCallback((id: string) => {
     setCartItems((prevItems) => {
       const existingItem = prevItems.find((item) => item.id === id);
       if (existingItem) {
@@ -58,14 +59,20 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
     });
   }, []);
 
+  const removeFromCartCompletely = useCallback((id: string) => {
+    setCartItems((prevItems) => {
+      return prevItems.filter(item => item.id !== id)
+    })
+  }, [])
+
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, totalQuantityInCart }}>
+    <CartContext.Provider value={{ cartItems, addOneToCart, removeOneFromCart, totalQuantityInCart, removeFromCartCompletely }}>
       {children}
     </CartContext.Provider>
   );
 };
 
-export const useCartItems = () => {
+export const useCartContext = () => {
   const context = useContext(CartContext);
   if (!context) {
     throw new Error("useCartItems must be used within a CartProvider");

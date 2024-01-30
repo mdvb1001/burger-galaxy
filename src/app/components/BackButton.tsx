@@ -3,7 +3,7 @@
 import { useRouter } from 'next/navigation';
 import React from 'react';
 
-const BackButton: React.FC = () => {
+const BackButton = () => {
     const router = useRouter();
 
     const goBack = () => {
