@@ -1,3 +1,16 @@
+const fetchProduct = async (id) => {
+  let productsArr = []
+  try {
+    const res = await fetch('https://burgerhub00.github.io/data/products.json')
+    const data = await res.json()
+    const { products } = data
+    productsArr = products
+  } catch (error) {
+    console.log(error)
+  }
+  return productsArr.find((product) => product.id === id)
+}
+
 function formatCentsToDollar(centsString) {
   // Convert the string to an integer
   const cents = parseInt(centsString, 10);
@@ -13,7 +26,6 @@ function formatCentsToDollar(centsString) {
   // Convert to locale string for formatting
   return dollars.replace(/\d(?=(\d{3})+\.)/g, '$&,');
 }
-
 // Example Usage
 
-export { formatCentsToDollar }
+export { formatCentsToDollar, fetchProduct }

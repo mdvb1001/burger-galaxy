@@ -1,6 +1,7 @@
 import Image from "next/image";
-import { formatCentsToDollar } from "@/app/utils";
+import { fetchProduct, formatCentsToDollar } from "@/app/utils";
 import BackButton from "@/app/components/BackButton";
+import AddToCartButton from "@/app/components/AddToCartButton";
 interface ProductDetailsPageProps {
   params: { id: string };
 }
@@ -17,15 +18,7 @@ const ProductDetail = async (props: ProductDetailsPageProps) => {
   const {
     params: { id },
   } = props;
-  let prod: Product = {} as Product;
-  try {
-    const res = await fetch("https://burgerhub00.github.io/data/products.json");
-    const data = await res.json();
-    const { products } = data;
-    prod = products.filter((product: Product) => product.id === id)[0];
-  } catch (error) {
-    console.log(error);
-  }
+  const prod = await fetchProduct(id);
 
   return (
     <div key={prod.id}>
@@ -34,6 +27,7 @@ const ProductDetail = async (props: ProductDetailsPageProps) => {
       <Image src={prod.image} width="200" height="200" alt={prod.name} />
       <div>Price: ${formatCentsToDollar(prod.price)}</div>
       <div>Nutrition: {prod.calorie + ""} calories</div>
+      <AddToCartButton id={prod.id} />
     </div>
   );
 };
