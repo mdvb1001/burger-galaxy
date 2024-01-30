@@ -11,6 +11,7 @@ interface CartContextProps {
   cartItems: Item[];
   addToCart: (id: string) => void;
   removeFromCart: (id: string) => void;
+  totalQuantityInCart: number;
 }
 
 const CartContext = createContext<CartContextProps | undefined>(undefined);
@@ -35,6 +36,8 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
     });
   }, []);
 
+  const totalQuantityInCart = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+
   const removeFromCart = useCallback((id: string) => {
     setCartItems((prevItems) => {
       const existingItem = prevItems.find((item) => item.id === id);
@@ -56,7 +59,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
   }, []);
 
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart }}>
+    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, totalQuantityInCart }}>
       {children}
     </CartContext.Provider>
   );
