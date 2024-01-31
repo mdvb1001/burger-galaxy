@@ -26,13 +26,16 @@ const CartItemsList = ({ data }: CartItemsListProps) => {
   const { cartItems } = useCartContext();
 
   // Combine product data with quantities from cartItems
-  const itemsToRender = data.reduce((acc: (Product & { quantity: number })[], product: Product) => {
+  const itemsToRender = data.reduce((acc: (Product & { quantity: number, itemCost: number })[], product: Product) => {
     // Find the matching cart item
     const cartItem = cartItems.find((item: Item) => item.id === product.id);
-
+    // Calculate the cost of the item
+    const cost = (price: number, quantity:number) => {
+      return price * quantity;
+    }
     // If the item is in the cart, add it to the array with its quantity
     if (cartItem) {
-      acc.push({ ...product, quantity: cartItem.quantity });
+      acc.push({ ...product, quantity: cartItem.quantity, itemCost: cost(product.price, cartItem.quantity) });
     }
 
     return acc;
@@ -43,7 +46,7 @@ const CartItemsList = ({ data }: CartItemsListProps) => {
       {itemsToRender.map((product) => (
         <li key={product.id}>
           <h2>{product.name} (Quantity: {product.quantity})</h2>
-          <p>Price: ${formatCentsToDollar(product.price)}</p>
+          <p>Price: ${formatCentsToDollar(product.itemCost)}</p>
           <p>{product.description}</p>
           <DeleteButton id={product.id} />
         </li>
