@@ -2,7 +2,6 @@
 
 import React, { useEffect } from "react";
 import { useCartContext } from "@/app/Contexts/CartContext";
-import { exit } from "process";
 
 const Badges = () => {
   const { totalQuantityInCart, setExistingCart } = useCartContext();
@@ -19,7 +18,7 @@ const Badges = () => {
         quantity: existingCart[id],
       };
     }).filter(item => item.quantity > 0);
-    localStorage.setItem("cart", JSON.stringify(cart));
+
     setExistingCart(cart);
   }, []);
 
