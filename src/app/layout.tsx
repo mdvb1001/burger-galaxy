@@ -3,10 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ProductsProvider } from '@/app/Contexts/ProductsContext'
 import { CartProvider } from '@/app/Contexts/CartContext'
-import Badges from '@/app/components/Badges'
-import CartIcon from '@/app/components/CartIcon'
-import HomeIcon from '@/app/components/HomeIcon'
 import Providers from '@/app/providers'
+import Layout from '@/app/components/Layout'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,17 +19,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="light text-foreground bg-background">
       <body className={inter.className}>
         <Providers>
           <CartProvider>
             <ProductsProvider>
-              <nav>
-                <HomeIcon />
-                <CartIcon />
-                <Badges />
-              </nav>
-              {children}
+              <Layout children={children} />
             </ProductsProvider>
           </CartProvider>
         </Providers>

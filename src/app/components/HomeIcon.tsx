@@ -8,7 +8,7 @@ const HomeIcon = () => {
     e.preventDefault();
     router.push(`/`);
   };
-  return <a onClick={handleClick}>Home</a>;
+  return <a className="font-bold text-inherit" onClick={handleClick}>Home</a>;
 };
 
 export default HomeIcon;

@@ -21,7 +21,7 @@ const AddToCartButton = ({ id }: AddToCartButtonProps) => {
     localStorage.setItem("cart", JSON.stringify(cart));
   };
 
-  return <Button color="primary" onClick={handleAddToCart}>Add To Cart</Button>;
+  return <Button onClick={handleAddToCart}>Add To Cart</Button>;
 };
 
 export default AddToCartButton;
