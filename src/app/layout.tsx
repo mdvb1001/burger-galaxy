@@ -4,7 +4,9 @@ import "./globals.css";
 import Link from "next/link";
 import { ProductsProvider } from '@/app/Contexts/ProductsContext'
 import { CartProvider } from '@/app/Contexts/CartContext'
-import Cart from '@/app/components/Cart'
+import Badges from '@/app/components/Badges'
+import CartIcon from '@/app/components/CartIcon'
+import HomeIcon from '@/app/components/HomeIcon'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,9 +26,9 @@ export default function RootLayout({
         <CartProvider>
           <ProductsProvider>
             <nav>
-              <Link href="/">Burger Cove</Link>
-              <Link className="pl-1" href="/cart">Cart</Link>
-              <Cart />
+              <HomeIcon />
+              <CartIcon />
+              <Badges />
             </nav>
             {children}
           </ProductsProvider>

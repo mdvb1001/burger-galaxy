@@ -3,7 +3,7 @@
 import React, { useEffect } from 'react';
 import { useCartContext } from '@/app/Contexts/CartContext';
 
-const Cart = () => {
+const Badges = () => {
     const { totalQuantityInCart, setExistingCart } = useCartContext();
 
     useEffect(() => {
@@ -28,4 +28,4 @@ const Cart = () => {
     );
 };
 
-export default Cart;
+export default Badges;
