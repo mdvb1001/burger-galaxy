@@ -3,23 +3,10 @@
 import { useCartContext } from "@/app/Contexts/CartContext";
 import { formatCentsToDollar } from "@/app/utils";
 import DeleteButton from "./DeleteButton";
+import { Product, Item } from "@/app/types";
 
 interface CartItemsListProps {
   data: Product[];
-}
-
-interface Product {
-  id: string;
-  name: string;
-  price: number;
-  image: string;
-  description: string;
-  calorie: number;
-}
-
-interface Item {
-  id: string;
-  quantity: number;
 }
 
 const CartItemsList = ({ data }: CartItemsListProps) => {

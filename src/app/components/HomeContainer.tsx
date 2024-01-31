@@ -1,18 +1,10 @@
 'use client'
 
 import ItemCard from './ItemCard'
+import { Product } from '@/app/types'
 
 interface HomeContainerProps {
   data: [Product]
-}
-
-interface Product {
-    id: string,
-    name: string,
-    price: number,
-    image: string,
-    description: string,
-    calorie: number
 }
 
 const HomeContainer = ({ data }: HomeContainerProps) => {

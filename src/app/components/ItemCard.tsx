@@ -1,15 +1,7 @@
 import Image from "next/image";
 import { formatCentsToDollar } from "@/app/utils";
 import { useRouter } from "next/navigation";
-
-interface Product {
-  id: string;
-  name: string;
-  price: number;
-  image: string;
-  description: string;
-  calorie: number;
-}
+import { Product } from "@/app/types";
 
 const ItemCard = ({ item }: { item: Product }) => {
   const router = useRouter();

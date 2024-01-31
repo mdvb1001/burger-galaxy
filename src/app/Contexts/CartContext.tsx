@@ -1,11 +1,7 @@
 "use client";
 
 import React, { createContext, useState, useContext, useCallback } from "react";
-
-interface Item {
-  id: string;
-  quantity: number;
-}
+import { Item } from "@/app/types";
 
 interface CartContextProps {
   cartItems: Item[];

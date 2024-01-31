@@ -1,15 +1,7 @@
 'use client'
 
 import React, { createContext, useState, useContext } from 'react';
-
-interface Product {
-  id: string,
-  name: string,
-  price: number,
-  image: string,
-  description: string,
-  calorie: number
-}
+import { Product } from '@/app/types';
 
 interface ProductsContextProps {
   products: Product[];

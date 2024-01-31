@@ -6,14 +6,6 @@ import AddToCartButton from "@/app/components/AddToCartButton";
 interface ProductDetailsPageProps {
   params: { id: string };
 }
-interface Product {
-  id: string;
-  name: string;
-  price: number;
-  image: string;
-  description: string;
-  calorie: number;
-}
 
 const ProductDetail = async (props: ProductDetailsPageProps) => {
   const {
