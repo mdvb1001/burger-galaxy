@@ -4,6 +4,8 @@ import { useCartContext } from "@/app/Contexts/CartContext";
 import { formatCentsToDollar } from "@/app/utils";
 import DeleteButton from "./DeleteButton";
 import { Product, Item } from "@/app/types";
+import AddOneButton from "./AddOneButton";
+import RemoveOneButton from "./RemoveOneButton";
 
 interface CartItemsListProps {
   data: Product[];
@@ -35,7 +37,9 @@ const CartItemsList = ({ data }: CartItemsListProps) => {
           <h2>{product.name} (Quantity: {product.quantity})</h2>
           <p>Price: ${formatCentsToDollar(product.itemCost)}</p>
           <p>{product.description}</p>
+          <RemoveOneButton id={product.id} />
           <DeleteButton id={product.id} />
+          <AddOneButton id={product.id} />
         </li>
       ))}
     </ul>
