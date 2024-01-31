@@ -1,5 +1,5 @@
 import HomeContainer from '@/app/components/HomeContainer'
-import { fetchAllProducts } from '@/app/utils'
+import { fetchAllProducts } from '@/app/requests'
 
 export default async function Home () {
 

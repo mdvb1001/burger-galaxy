@@ -9,7 +9,14 @@ interface DeleteButtonProps {
 
 const DeleteButton = ({ id }: DeleteButtonProps) => {
   const { removeFromCartCompletely } = useCartContext();
-  return <button onClick={() => removeFromCartCompletely(id)}>Delete</button>;
+  const handleRemoveFromCart = () => {
+    removeFromCartCompletely(id);
+    const cart = JSON.parse(localStorage.getItem("cart") || "{}");
+    delete cart[id];
+    localStorage.setItem("cart", JSON.stringify(cart));
+  };
+
+  return <button onClick={() => handleRemoveFromCart()}>Delete</button>;
 };
 
 export default DeleteButton;

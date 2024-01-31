@@ -30,7 +30,7 @@ const CartItemsList = ({ data }: CartItemsListProps) => {
     // Find the matching cart item
     const cartItem = cartItems.find((item: Item) => item.id === product.id);
     // Calculate the cost of the item
-    const cost = (price: number, quantity:number) => {
+    const cost = (price: number, quantity: number) => {
       return price * quantity;
     }
     // If the item is in the cart, add it to the array with its quantity

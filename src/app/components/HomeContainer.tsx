@@ -1,8 +1,6 @@
 'use client'
 
-import Link from 'next/link'
-import Image from 'next/image'
-import { formatCentsToDollar } from "@/app/utils";
+import ItemCard from './ItemCard'
 
 interface HomeContainerProps {
   data: [Product]
@@ -22,17 +20,7 @@ const HomeContainer = ({ data }: HomeContainerProps) => {
     <ul>
       {data.map((product: any) => (
         <li key={product.id}>
-          <Link href={`/products/${product.id}`}>
-            <Image
-              src={product.image}
-              width='200'
-              height='200'
-              alt={product.name}
-            />
-            <h2>{product.name}</h2>
-            <p>${formatCentsToDollar(product.price)}</p>
-            <p>{product.description}</p>
-          </Link>
+          <ItemCard item={product} />
         </li>
       ))}
     </ul>

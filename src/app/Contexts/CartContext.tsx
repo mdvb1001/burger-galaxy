@@ -13,6 +13,7 @@ interface CartContextProps {
   removeOneFromCart: (id: string) => void;
   totalQuantityInCart: number;
   removeFromCartCompletely: (id: string) => void;
+  setExistingCart: (cart: Item[]) => void;
 }
 
 const CartContext = createContext<CartContextProps | undefined>(undefined);
@@ -21,6 +22,10 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const [cartItems, setCartItems] = useState<Item[]>([]);
+
+  const setExistingCart = (cart: Item[]) => {
+    setCartItems(cart)
+  }
 
   const addOneToCart = useCallback((id: string) => {
     setCartItems((prevItems) => {
@@ -66,7 +71,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
   }, [])
 
   return (
-    <CartContext.Provider value={{ cartItems, addOneToCart, removeOneFromCart, totalQuantityInCart, removeFromCartCompletely }}>
+    <CartContext.Provider value={{ cartItems, addOneToCart, removeOneFromCart, totalQuantityInCart, removeFromCartCompletely, setExistingCart }}>
       {children}
     </CartContext.Provider>
   );

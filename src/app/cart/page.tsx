@@ -2,7 +2,7 @@ import React from 'react';
 import { NextPage } from 'next';
 import BackButton from "@/app/components/BackButton";
 import CartItemsList from "@/app/components/CartItemsList";
-import { fetchAllProducts } from '../utils';
+import { fetchAllProducts } from '@/app/requests';
 
 const CartPage: NextPage = async () => {
   const products = await fetchAllProducts();

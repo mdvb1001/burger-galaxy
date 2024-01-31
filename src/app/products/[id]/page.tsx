@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { fetchProduct, formatCentsToDollar } from "@/app/utils";
+import { formatCentsToDollar } from "@/app/utils";
+import { fetchProduct } from "@/app/requests";
 import BackButton from "@/app/components/BackButton";
 import AddToCartButton from "@/app/components/AddToCartButton";
 interface ProductDetailsPageProps {
