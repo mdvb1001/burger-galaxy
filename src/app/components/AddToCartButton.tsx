@@ -2,6 +2,7 @@
 
 import React from "react";
 import { useCartContext } from "@/app/Contexts/CartContext";
+import { Button } from "@nextui-org/button";
 
 interface AddToCartButtonProps {
   id: string;
@@ -20,7 +21,7 @@ const AddToCartButton = ({ id }: AddToCartButtonProps) => {
     localStorage.setItem("cart", JSON.stringify(cart));
   };
 
-  return <button onClick={handleAddToCart}>Add To Cart</button>;
+  return <Button color="primary" onClick={handleAddToCart}>Add To Cart</Button>;
 };
 
 export default AddToCartButton;

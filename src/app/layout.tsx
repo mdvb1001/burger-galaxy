@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Link from "next/link";
 import { ProductsProvider } from '@/app/Contexts/ProductsContext'
 import { CartProvider } from '@/app/Contexts/CartContext'
 import Badges from '@/app/components/Badges'
 import CartIcon from '@/app/components/CartIcon'
 import HomeIcon from '@/app/components/HomeIcon'
+import Providers from '@/app/providers'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,16 +23,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <CartProvider>
-          <ProductsProvider>
-            <nav>
-              <HomeIcon />
-              <CartIcon />
-              <Badges />
-            </nav>
-            {children}
-          </ProductsProvider>
-        </CartProvider>
+        <Providers>
+          <CartProvider>
+            <ProductsProvider>
+              <nav>
+                <HomeIcon />
+                <CartIcon />
+                <Badges />
+              </nav>
+              {children}
+            </ProductsProvider>
+          </CartProvider>
+        </Providers>
       </body>
     </html>
   );
