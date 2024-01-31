@@ -11,7 +11,7 @@ const BackButton = () => {
     };
 
     return (
-        <button onClick={goBack}>Back</button>
+        <button className="font-medium py-1 my-3" onClick={goBack}>Back</button>
     );
 };
 
