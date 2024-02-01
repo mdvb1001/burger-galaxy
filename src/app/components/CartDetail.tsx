@@ -10,7 +10,7 @@ interface CartDetailProps {
 const CartDetail: React.FC<CartDetailProps> = ({ products }) => {
   return (
     <div className="flex flex-col items-center bg-gray-200 rounded-xl py-4 min-w-64">
-      <div className="px-4 md:px-8 w-full">
+      <div className="px-4 md:px-12 w-full">
         <BackButton />
         <h1 className="text-xl md:text-4xl font-bold flex justify-center mb-4">
           Cart

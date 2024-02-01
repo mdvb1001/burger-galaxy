@@ -14,7 +14,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
     <div className="flex flex-col items-center bg-gray-200 rounded-xl py-4 min-w-64">
       <div className="mx-4">
         <BackButton />
-        <div className="flex justify-center mb-4 h-72 md:h-96 relative overflow-hidden">
+        <div className="flex justify-center mb-4 md:mb-6 h-72 md:h-96 relative overflow-hidden">
           <Image
             className="rounded-xl object-cover"
             src={product.image}
@@ -22,7 +22,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
             alt={product.name}
           />
         </div>
-        <h1 className="text-xl md:text-4xl font-bold flex justify-center mb-4">
+        <h1 className="text-2xl md:text-4xl font-bold flex justify-center mb-4">
           {product.name}
         </h1>
         <div className="flex justify-center flex-col max-w-[500px] mb-4">
