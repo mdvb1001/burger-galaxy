@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { ProductsProvider } from '@/app/Contexts/ProductsContext'
-import { CartProvider } from '@/app/Contexts/CartContext'
-import Providers from '@/app/providers'
-import Layout from '@/app/components/Layout'
+import { ProductsProvider } from "@/app/Contexts/ProductsContext";
+import Providers from "@/app/providers";
+import Layout from "@/app/components/Layout";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,11 +21,9 @@ export default function RootLayout({
     <html lang="en" className="light text-foreground bg-background">
       <body className={inter.className}>
         <Providers>
-          <CartProvider>
-            <ProductsProvider>
-              <Layout children={children} />
-            </ProductsProvider>
-          </CartProvider>
+          <ProductsProvider>
+            <Layout children={children} />
+          </ProductsProvider>
         </Providers>
       </body>
     </html>

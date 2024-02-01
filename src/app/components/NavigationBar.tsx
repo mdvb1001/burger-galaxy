@@ -7,6 +7,7 @@ import {
 } from "@nextui-org/react";
 import CartLink from "@/app/components/CartLink";
 import HomeLink from "@/app/components/HomeLink";
+import { ThemeSwitcher } from "@/app/components/ThemeSwitcher";
 
 const NavigationBar: React.FC = () => {
   return (
@@ -17,6 +18,7 @@ const NavigationBar: React.FC = () => {
         </NavbarBrand>
       </NavbarContent>
       <NavbarContent justify="end">
+        <ThemeSwitcher />
         <NavbarItem>
           <CartLink />
         </NavbarItem>

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { Divider } from '@nextui-org/divider';
 import { useCartContext } from "@/app/Contexts/CartContext";
 import { formatCentsToDollar } from "@/app/utils";
 import DeleteAllButton from "./DeleteAllButton";
@@ -62,6 +63,7 @@ const CartItemsList = ({ data }: CartItemsListProps) => {
           </div>
           <div className="flex items-center">
             <p className="font-medium mr-4">${formatCentsToDollar(product.itemCost)}</p>
+            <Divider orientation="vertical" className="mr-4"/>
             <div className="mr-2">
               <RemoveOneButton id={product.id} />
             </div>

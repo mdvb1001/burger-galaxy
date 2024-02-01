@@ -9,12 +9,13 @@ TODO:
 - [X] Start Styling
 - [ ] Fine tune styling
 - [X] Add badges
-- [ ] Add all icons
+- [X] Add all icons
 - [X] Fix links so they cursor changes to a hand
+- [X] Add toast notification
 - [ ] Add cool new font
 - [ ] Tweak colors
 - [ ] Add background colors
-- [ ] Bonus: Implement dark mode
+- [X] Bonus: Implement dark mode
 - [X] Bonus: Add increment and decrement options on each item in the cart
 - [ ] Bonus: Customize page-not-found
 - [ ] Bonus: Add sparkles
