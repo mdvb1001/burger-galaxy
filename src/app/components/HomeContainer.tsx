@@ -10,7 +10,7 @@ interface HomeContainerProps {
 const HomeContainer = ({ data }: HomeContainerProps) => {
   return (
     <>
-      <h1 className="pb-4 font-bold text-3xl">Menu</h1>
+      <h1 className="pb-4 font-bold text-3xl flex justify-center">Menu</h1>
       <ul className="flex flex-wrap -mx-3">
         {data.map((product: any) => (
           <li key={product.id} className="w-full md:w-1/3 mb-8">

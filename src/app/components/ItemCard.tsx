@@ -19,7 +19,7 @@ const ItemCard = ({ item }: { item: Product }) => {
       aria-label={`Go to product detail page of ${item.name}`}
     >
       <Card className="px-2 p-2 mx-3 h-full bg-primary shadow-xl shadow-blue-500/50">
-        <CardHeader className="mb-3 pb-0 pt-2 px-4 flex-col items-start relative h-60 sm:h-80 md:h-40">
+        <CardHeader className="mb-3 pb-0 pt-2 px-4 flex-col items-start relative h-60 sm:h-80 md:h-40 xl:h-80">
           <Image
             alt={`Image of ${item.name}`}
             className="object-cover rounded-xl"
