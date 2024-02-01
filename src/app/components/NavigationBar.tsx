@@ -5,8 +5,7 @@ import {
   NavbarContent,
   NavbarItem,
 } from "@nextui-org/react";
-import Badges from "@/app/components/Badges";
-import CartIcon from "@/app/components/CartIcon";
+import CartLink from "@/app/components/CartLink";
 import HomeIcon from "@/app/components/HomeIcon";
 
 const NavigationBar: React.FC = () => {
@@ -19,10 +18,7 @@ const NavigationBar: React.FC = () => {
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem>
-          <Badges />
-        </NavbarItem>
-        <NavbarItem>
-          <CartIcon />
+          <CartLink />
         </NavbarItem>
       </NavbarContent>
     </Navbar>

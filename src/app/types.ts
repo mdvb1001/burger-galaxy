@@ -12,4 +12,14 @@ interface Item {
   quantity: number;
 }
 
-export type { Product, Item }
+interface IconProps {
+  fill?: string;
+  filled?: boolean;
+  size?: number;
+  height?: number;
+  width?: number;
+  label?: string;
+  [key: string]: any; // for additional props that might be passed
+}
+
+export type { Product, Item, IconProps }
