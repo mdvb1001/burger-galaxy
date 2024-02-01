@@ -16,7 +16,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
       <footer className="bg-gray-800 text-white p-4">
         <div className="container mx-auto">
-          <p>© 2024 Burger Island</p>
+          <small>© 2024 Burger Galaxy. All Rights Reserved</small>
         </div>
       </footer>
     </div>

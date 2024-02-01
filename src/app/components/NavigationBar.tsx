@@ -6,14 +6,14 @@ import {
   NavbarItem,
 } from "@nextui-org/react";
 import CartLink from "@/app/components/CartLink";
-import HomeIcon from "@/app/components/HomeIcon";
+import HomeLink from "@/app/components/HomeLink";
 
 const NavigationBar: React.FC = () => {
   return (
-    <Navbar className="bg-gray-800 text-white p-1" position="static">
+    <Navbar className="bg-gray-800 text-white py-4" position="static">
       <NavbarContent justify="center">
         <NavbarBrand>
-          <HomeIcon />
+          <HomeLink />
         </NavbarBrand>
       </NavbarContent>
       <NavbarContent justify="end">

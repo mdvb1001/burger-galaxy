@@ -11,11 +11,17 @@ const ItemCard = ({ item }: { item: Product }) => {
     router.push(`/products/${item.id}`);
   };
   return (
-    <a onClick={handleClick} className="block h-full">
+    <a
+      onClick={handleClick}
+      className="block h-full cursor-pointer"
+      role="link"
+      tabIndex={0}
+      aria-label={`Go to product detail page of ${item.name}`}
+    >
       <Card className="px-2 pt-2 m-2 h-full">
         <CardHeader className="pb-0 pt-2 px-4 flex-col items-start relative h-60 sm:h-80 md:h-40">
           <Image
-            alt="Card background"
+            alt={`Image of ${item.name}`}
             className="object-cover rounded-xl"
             src={item.image}
             fill={true}

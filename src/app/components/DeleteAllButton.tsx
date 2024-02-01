@@ -3,6 +3,7 @@
 import React from "react";
 import { useCartContext } from "../Contexts/CartContext";
 import { Button } from "@nextui-org/button";
+import { TrashIcon } from "@/app/icons/TrashIcon";
 
 interface DeleteAllButtonProps {
   id: string;
@@ -17,7 +18,7 @@ const DeleteAllButton = ({ id }: DeleteAllButtonProps) => {
     localStorage.setItem("cart", JSON.stringify(cart));
   };
 
-  return <Button onClick={() => handleRemoveFromCart()}>Delete</Button>;
+  return <Button isIconOnly onClick={() => handleRemoveFromCart()}><TrashIcon className="w-4 h-4" /></Button>;
 };
 
 export default DeleteAllButton;

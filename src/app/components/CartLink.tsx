@@ -17,12 +17,14 @@ const CartLink = () => {
     if (cartIds.length === 0) {
       return;
     }
-    const cart = cartIds.map((id) => {
-      return {
-        id,
-        quantity: existingCart[id],
-      };
-    }).filter(item => item.quantity > 0);
+    const cart = cartIds
+      .map((id) => {
+        return {
+          id,
+          quantity: existingCart[id],
+        };
+      })
+      .filter((item) => item.quantity > 0);
 
     setExistingCart(cart);
   }, []);
@@ -35,8 +37,19 @@ const CartLink = () => {
   const badgeVisibility = totalQuantityInCart > 0 ? false : true;
 
   return (
-    <Badge color="danger" content={totalQuantityInCart} isInvisible={badgeVisibility} shape="circle">
-      <Button isIconOnly onClick={handleClick}>
+    <Badge
+      color="danger"
+      content={totalQuantityInCart}
+      isInvisible={badgeVisibility}
+      shape="circle"
+    >
+      <Button
+        isIconOnly
+        onClick={handleClick}
+        role="link"
+        tabIndex={0}
+        aria-label="Go to home cart"
+      >
         <CartIcon className="w-6 h-6" />
       </Button>
     </Badge>
