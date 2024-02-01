@@ -5,9 +5,9 @@ import {
   NavbarContent,
   NavbarItem,
 } from "@nextui-org/react";
-import CartLink from "@/app/components/CartLink";
-import HomeLink from "@/app/components/HomeLink";
-import { ThemeSwitcher } from "@/app/components/ThemeSwitcher";
+import CartLink from "./CartLink";
+import HomeLink from "./HomeLink";
+import { ThemeSwitcher } from "./ThemeSwitcher";
 
 const NavigationBar: React.FC = () => {
   return (

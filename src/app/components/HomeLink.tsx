@@ -1,8 +1,8 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { SparkleIcon } from "@/app/icons/SparkleIcon";
 import Sparkles from "react-sparkle";
+import { SparkleIcon } from "@/app/icons/SparkleIcon";
 
 const HomeLink = () => {
   const router = useRouter();

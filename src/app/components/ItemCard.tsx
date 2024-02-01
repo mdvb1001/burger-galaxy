@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { formatCentsToDollar } from "@/app/utils";
 import { useRouter } from "next/navigation";
-import { Product } from "@/app/types";
 import { Card, CardBody, CardHeader } from "@nextui-org/react";
+import { formatCentsToDollar } from "@/app/utils";
+import { Product } from "@/app/types";
 
 const ItemCard = ({ item }: { item: Product }) => {
   const router = useRouter();

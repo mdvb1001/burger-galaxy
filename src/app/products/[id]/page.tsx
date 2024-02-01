@@ -8,10 +8,10 @@ const ProductDetailPage = async (props: ProductDetailsPageProps) => {
   const {
     params: { id },
   } = props;
-  const prod = await fetchProduct(id);
+  const product = await fetchProduct(id);
 
   return (
-    <ProductDetail product={prod} />
+    <ProductDetail product={product} />
   );
 };
 

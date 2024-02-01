@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import BackButton from "@/app/components/BackButton";
-import AddToCartButton from "@/app/components/AddToCartButton";
+import AddToCartButton from "./AddToCartButton";
 import { formatCentsToDollar } from "@/app/utils";
 import { Product } from "@/app/types";
 

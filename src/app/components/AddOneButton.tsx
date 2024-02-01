@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { useCartContext } from "../Contexts/CartContext";
+import { useCartContext } from "@/app/Contexts/CartContext";
 import { Button } from "@nextui-org/button";
 
 interface AddOneButtonProps {
