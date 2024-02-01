@@ -63,6 +63,17 @@ const config: Config = {
                 "0px 0px 30px 0px rgb(0 0 0 / 0.04), 0px 30px 60px 0px rgb(0 0 0 / 0.12), 0px 0px 1px 0px rgb(0 0 0 / 0.3)",
             },
           },
+          colors: {
+            background: "#FFFFFF", // or DEFAULT
+            foreground: "#11181C", // or 50 to 900 DEFAULT
+            primary: {
+              //... 50 to 900
+              foreground: "#FFFFFF",
+              DEFAULT: "#cce3fd",
+            },
+            // ... rest of the colors
+          },
+
         },
         dark: {
           layout: {
@@ -79,6 +90,26 @@ const config: Config = {
                 "0px 0px 30px 0px rgb(0 0 0 / 0.07), 0px 30px 60px 0px rgb(0 0 0 / 0.26), inset 0px 0px 1px 0px rgb(255 255 255 / 0.15)",
             },
           },
+          colors: {
+            background: "#000000", // or DEFAULT
+            foreground: "#ECEDEE", // or 50 to 900 DEFAULT
+            primary: {
+              //... 50 to 900
+              foreground: "#FFFFFF",
+              DEFAULT: "#050F33",
+            },
+            secondary: {
+              //... 50 to 900
+              foreground: "#1C2C67",
+              DEFAULT: "#1C2C67",
+            },
+            default: {
+              //... 50 to 900
+              foreground: "#FFFFFF",
+              DEFAULT: "#1F2937",
+            },
+          },
+          // ... rest of the colors
         },
       },
     }),

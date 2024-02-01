@@ -26,7 +26,7 @@ export function ThemeSwitcher() {
     <Switch
       checked={isDark}
       size="lg"
-      color="danger"
+      color="primary"
       onChange={toggleTheme}
       thumbIcon={({ isSelected, className }) =>
         isSelected ? (

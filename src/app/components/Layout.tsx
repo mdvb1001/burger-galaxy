@@ -14,7 +14,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         {children}
       </main>
 
-      <footer className="bg-gray-800 text-white p-4">
+      <footer className="p-4">
         <div className="container mx-auto">
           <small>© 2024 Burger Galaxy. All Rights Reserved</small>
         </div>

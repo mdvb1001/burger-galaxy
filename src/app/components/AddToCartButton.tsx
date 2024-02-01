@@ -15,12 +15,12 @@ const AddToCartButton = ({ id }: AddToCartButtonProps) => {
   const triggerToast = () => {
     toast.success("This item was added to your cart", {
       style: {
-        border: "1px solid #6B7A0D",
+        border: "1px solid #050F33",
         padding: "16px",
-        color: "#6B7A0D",
+        color: "#050F33",
       },
       iconTheme: {
-        primary: "#6B7A0D",
+        primary: "#050F33",
         secondary: "#FFFAEE",
       },
     });
@@ -39,7 +39,7 @@ const AddToCartButton = ({ id }: AddToCartButtonProps) => {
 
   return (
     <div>
-      <Button variant="bordered" onClick={handleAddToCart}>
+      <Button onClick={handleAddToCart}>
         Add To Cart
       </Button>
       <Toaster position="top-center" />

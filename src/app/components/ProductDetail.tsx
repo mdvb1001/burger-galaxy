@@ -11,7 +11,7 @@ interface ProductDetailProps {
 
 const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
   return (
-    <div className="flex flex-col items-center bg-gray-200 rounded-xl py-4 min-w-64">
+    <div className="flex flex-col items-center rounded-xl py-4 min-w-64 bg-primary shadow-xl shadow-blue-500/50 mb-8">
       <div className="mx-4">
         <BackButton />
         <div className="flex justify-center mb-4 md:mb-6 h-72 md:h-96 relative overflow-hidden">
@@ -32,7 +32,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
           <p className="mb-2">{product.description}</p>
           <span className="italic font-medium">{product.calorie} calories</span>
         </div>
-        <div className="flex justify-center">
+        <div className="flex justify-center mb-4">
           <AddToCartButton id={product.id} />
         </div>
       </div>

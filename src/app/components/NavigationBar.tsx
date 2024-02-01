@@ -11,7 +11,7 @@ import { ThemeSwitcher } from "@/app/components/ThemeSwitcher";
 
 const NavigationBar: React.FC = () => {
   return (
-    <Navbar className="bg-gray-800 text-white py-4" position="static">
+    <Navbar className="py-4" position="static">
       <NavbarContent justify="center">
         <NavbarBrand>
           <HomeLink />
