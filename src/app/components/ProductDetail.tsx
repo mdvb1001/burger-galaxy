@@ -27,7 +27,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
         </h1>
         <div className="flex justify-center flex-col max-w-[500px] mb-4">
           <p className="font-bold decoration-dotted underline mb-2">
-            Price: ${formatCentsToDollar(product.price)}
+            ${formatCentsToDollar(product.price)}
           </p>
           <p className="mb-2">{product.description}</p>
           <span className="italic font-medium">{product.calorie} calories</span>

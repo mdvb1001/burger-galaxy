@@ -1,3 +1,33 @@
+
+TODO:
+
+- [X] Add functionality for Cart badge in CartContext
+- [X] Query Product in Cart
+- [X] Add item cost
+- [X] Deploy app to Vercel and assess status
+- [X] Explore various UI framework options (keep in mind theme implementation)
+- [X] Start Styling
+- [ ] Fine tune styling
+- [X] Add badges
+- [ ] Add all icons
+- [X] Fix links so they cursor changes to a hand
+- [ ] Add cool new font
+- [ ] Tweak colors
+- [ ] Add background colors
+- [ ] Bonus: Implement dark mode
+- [X] Bonus: Add increment and decrement options on each item in the cart
+- [ ] Bonus: Customize page-not-found
+- [ ] Bonus: Add sparkles
+- [ ] Bonus: Add confetti when adding to cart
+- [ ] clean code
+- [X] Update all navigation to use useRouter next/navigation
+- [X] separate the fetch functions into a separate file
+- [X] put all the types in a separate file
+- [X] + and - buttons for the quantity in cart
+- [X] Rename the Cart to CartIcon
+- [X] for decrement of 1 item in cart
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
