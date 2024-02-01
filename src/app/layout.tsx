@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { ProductsProvider } from "@/app/Contexts/ProductsContext";
 import Providers from "@/app/providers";
 import Layout from "@/app/components/Layout";
 
@@ -21,9 +20,7 @@ export default function RootLayout({
     <html lang="en" className="light text-foreground bg-background">
       <body className={inter.className}>
         <Providers>
-          <ProductsProvider>
-            <Layout children={children} />
-          </ProductsProvider>
+          <Layout children={children} />
         </Providers>
       </body>
     </html>
