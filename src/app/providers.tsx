@@ -11,9 +11,9 @@ export default function Providers({ children }: ProvidersProps) {
   return (
     <NextUIProvider>
       <NextThemesProvider attribute="class" defaultTheme="dark">
-      <CartProvider>
-        {children}
-      </CartProvider>
+        <CartProvider>
+          {children}Ï
+        </CartProvider>
       </NextThemesProvider>
     </NextUIProvider>
   );
