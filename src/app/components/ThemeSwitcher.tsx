@@ -30,9 +30,9 @@ export function ThemeSwitcher() {
       onChange={toggleTheme}
       thumbIcon={({ isSelected, className }) =>
         isSelected ? (
-          <SunIcon className={`${className}`} width={16} height={16}  />
-        ) : (
           <MoonIcon className={`${className}`} width={16} height={16} />
+          ) : (
+          <SunIcon className={`${className}`} width={16} height={16}  />
         )
       }
     />
