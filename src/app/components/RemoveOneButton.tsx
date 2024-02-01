@@ -2,6 +2,7 @@
 
 import React from "react";
 import { useCartContext } from "../Contexts/CartContext";
+import { Button } from "@nextui-org/button";
 
 interface RemoveOneButtonProps {
   id: string;
@@ -18,7 +19,7 @@ const RemoveOneButton = ({ id }: RemoveOneButtonProps) => {
     localStorage.setItem("cart", JSON.stringify(cart));
   };
 
-  return <button onClick={() => handleRemoveFromCart()}>-</button>;
+  return <Button isIconOnly className="rounded-full h-10 w-10 p-0" onClick={() => handleRemoveFromCart()}>-</Button>;
 };
 
 export default RemoveOneButton;

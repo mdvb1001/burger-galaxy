@@ -2,12 +2,13 @@
 
 import React from "react";
 import { useCartContext } from "../Contexts/CartContext";
+import { Button } from "@nextui-org/button";
 
-interface DeleteButtonProps {
+interface DeleteAllButtonProps {
   id: string;
 }
 
-const DeleteButton = ({ id }: DeleteButtonProps) => {
+const DeleteAllButton = ({ id }: DeleteAllButtonProps) => {
   const { removeFromCartCompletely } = useCartContext();
   const handleRemoveFromCart = () => {
     removeFromCartCompletely(id);
@@ -16,7 +17,7 @@ const DeleteButton = ({ id }: DeleteButtonProps) => {
     localStorage.setItem("cart", JSON.stringify(cart));
   };
 
-  return <button onClick={() => handleRemoveFromCart()}>Delete</button>;
+  return <Button onClick={() => handleRemoveFromCart()}>Delete</Button>;
 };
 
-export default DeleteButton;
+export default DeleteAllButton;
