@@ -12,7 +12,7 @@ export default function Providers({ children }: ProvidersProps) {
     <NextUIProvider>
       <NextThemesProvider attribute="class" defaultTheme="dark">
         <CartProvider>
-          {children}Ï
+          {children}
         </CartProvider>
       </NextThemesProvider>
     </NextUIProvider>

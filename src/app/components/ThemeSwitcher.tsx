@@ -16,10 +16,10 @@ export function ThemeSwitcher() {
 
   if (!mounted) return null;
 
-  const isDark = theme === 'dark';
+  const isDark = theme === "dark";
 
   const toggleTheme = () => {
-    setTheme(isDark ? 'light' : 'dark');
+    setTheme(isDark ? "light" : "dark");
   };
 
   return (
@@ -30,9 +30,9 @@ export function ThemeSwitcher() {
       onChange={toggleTheme}
       thumbIcon={({ isSelected, className }) =>
         isSelected ? (
+          <SunIcon className={`${className}`} width={16} height={16} />
+        ) : (
           <MoonIcon className={`${className}`} width={16} height={16} />
-          ) : (
-          <SunIcon className={`${className}`} width={16} height={16}  />
         )
       }
     />
