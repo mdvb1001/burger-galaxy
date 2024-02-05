@@ -16,10 +16,12 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
         <BackButton />
         <div className="flex justify-center mb-4 md:mb-6 h-72 md:h-96 relative overflow-hidden">
           <Image
+            priority // Preload the image
             className="rounded-xl object-cover"
             src={product.image}
             fill={true}
             alt={product.name}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw" // Optimize image loading
           />
         </div>
         <h1 className="text-2xl md:text-4xl font-bold flex justify-center mb-4">

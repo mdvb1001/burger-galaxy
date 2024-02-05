@@ -56,6 +56,7 @@ const CartItemsList = ({ data }: CartItemsListProps) => {
                 src={product.image}
                 fill={true}
                 alt={product.name}
+                sizes="10vw" // Optimize image loading
               />
             </div>
             <h2 className="mr-2">{product.name}</h2>

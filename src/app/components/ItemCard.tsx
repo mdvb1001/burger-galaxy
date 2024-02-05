@@ -1,3 +1,6 @@
+'use client';
+// This should be a client component because it contains event handlers and hooks
+
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Card, CardBody, CardHeader } from "@nextui-org/react";
@@ -21,10 +24,12 @@ const ItemCard = ({ item }: { item: Product }) => {
       <Card className="px-2 p-2 mx-3 h-full bg-primary shadow-xl shadow-blue-500/50">
         <CardHeader className="mb-3 pb-0 pt-2 px-4 flex-col items-start relative h-60 sm:h-80 md:h-40 xl:h-80">
           <Image
+            priority={item.id === "1"} // Preload the first image
             alt={`Image of ${item.name}`}
             className="object-cover rounded-xl"
             src={item.image}
             fill={true}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw" // Optimize image loading
           />
         </CardHeader>
         <CardBody className="overflow-visible py-2">

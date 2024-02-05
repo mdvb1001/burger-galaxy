@@ -1,10 +1,10 @@
-"use client";
+// I should have kept this a server component... but forgot to change it back after abstracting
 
 import ItemCard from "./ItemCard";
 import { Product } from "@/app/types";
 
 interface HomeContainerProps {
-  data: [Product];
+  data: Product[];
 }
 
 const HomeContainer = ({ data }: HomeContainerProps) => {
